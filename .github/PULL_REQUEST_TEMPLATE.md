@@ -1,29 +1,28 @@
-<!--
-Thanks for contributing!
+## Related Issue
+Closes #
 
-A few guidelines:
-- Make sure you have read the
-  [**contribution guide**](https://github.com/your-username/winhome/blob/main/CONTRIBUTING.md).
-- Make sure you have opened an issue to discuss the change.
-- Please run the tests and make sure they pass.
-- Please add tests for your change.
--->
+## Proposed Changes
+- (Briefly describe the changes you've made)
+- (Mention any specific files modified)
 
-**Issue**
-Closes #<issue_number>
+## Type of Change
+- [ ] 🐛 Bug fix
+- [ ] ✨ New feature
+- [ ] 📖 Documentation
+- [ ] 🧪 Testing
+- [ ] 🛠️ Refactoring
+- [ ] 🚀 DevOps/CI
 
-**Description**
-A clear and concise description of the change.
+## Screenshots / Logs (if applicable)
+<!-- If your change affects the CLI output or system state, please provide a screenshot or log output here -->
 
-**Verification**
-Please describe the tests that you ran to verify your changes.
-Provide instructions so we can reproduce.
-Please also list any relevant details for your test configuration.
-- [ ] Test A
-- [ ] Test B
+## Testing & Verification
+- [ ] I have run `dotnet test` and all 60+ cross-platform tests passed.
+- [ ] I have verified the changes on a Windows environment (if applicable).
+- [ ] I have added new unit tests to cover my changes.
 
-**Checklist**
-- [ ] I have read the [contribution guide](https://github.com/your-username/winhome/blob/main/CONTRIBUTING.md).
-- [ ] I have opened an issue to discuss the change.
-- [ ] I have run the tests and they pass.
-- [ ] I have added tests for my change.
+## GSSOC 2026 Checklist
+- [ ] I have read the [Contribution Guidelines](https://github.com/DotDev262/WinHome/blob/main/CONTRIBUTING.md).
+- [ ] My code is formatted correctly (I have run `dotnet format`).
+- [ ] I have linked the PR to an approved issue.
+- [ ] I understand that a maintainer must apply the `gssoc:approved` label for this PR to count for points.

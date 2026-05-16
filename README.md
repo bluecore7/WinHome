@@ -23,7 +23,13 @@ powered by modern, dependency-free, single-file .NET.
 
 ---
 
-## ⭐ Why WinHome?
+## 💬 Community & Support
+
+*   **GitHub Discussions:** The best place for "How do I...?" questions and community support. **[Join the conversation!](https://github.com/DotDev262/WinHome/discussions)**
+*   **Issues:** For bug reports and feature requests. Please check existing issues before opening a new one.
+*   **GSSOC 2026:** Participants should check our **[Contributing Guide](./CONTRIBUTING.md)** for program-specific instructions.
+
+---
 
 I built WinHome to create a **lightweight, dependency-free configuration tool** that runs **natively on Windows** as a **single-file EXE** — no Python, Ruby, or agent installations required. This project was heavily inspired by NixOS's `home-manager` but tailored specifically for the Windows ecosystem.
 

@@ -21,7 +21,7 @@ scheduled_tasks:
     path: "\\MyTasks\\DailyScript"
     triggers:
       - type: "daily"
-        startBoundary: "2024-01-01T08:00:00"
+        startBoundary: "2026-01-01T08:00:00"
     actions:
       - type: "exec"
         path: "C:\\path\\to\\my\\script.bat"

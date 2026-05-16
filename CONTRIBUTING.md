@@ -2,76 +2,65 @@
 
 First off, thank you for considering contributing to WinHome! It's people like you that make WinHome such a great tool.
 
-## Where do I go from here?
+## 🌈 GSSOC 2026 Participants
+Welcome! We are excited to have you. To ensure your contribution is tracked correctly on the leaderboard, please note:
 
-If you've noticed a bug or have a feature request, [make one](https://github.com/DotDev262/WinHome/issues/new/choose)! It's generally best if you get confirmation of your bug or approval for your feature request this way before starting to code.
+### 🏷️ Mandatory PR Labels
+Maintainers will apply these labels to your Pull Requests. They are required for GSSOC tracking:
+- **gssoc:approved**: Every PR **must** have this label to be counted for the program.
+- **Difficulty**: One of `level:beginner`, `level:intermediate`, `level:advanced`, or `level:critical`.
+- **Type**: Labels like `type:bug`, `type:feature`, `type:docs`, `type:testing`, etc.
+- **Quality**: Optional multipliers like `quality:clean` or `quality:exceptional`.
 
-### Fork & create a branch
+## 🚀 Getting Started
 
-If this is something you think you can fix, then [fork WinHome](https://github.com/DotDev262/WinHome/fork) and create a branch with a descriptive name.
+If you've noticed a bug or have a feature request, [open an issue](https://github.com/DotDev262/WinHome/issues/new/choose)! Please wait for approval before starting work on a major feature.
 
-A good branch name would be (where issue #38 is the ticket you're working on):
+### Fork & Create a Branch
+1. [Fork WinHome](https://github.com/DotDev262/WinHome/fork).
+2. Create a branch with a descriptive name: `git checkout -b 38-add-awesome-new-feature` (where 38 is the issue number).
 
-```sh
-git checkout -b 38-add-awesome-new-feature
+### Build & Test
+- **Build**: `dotnet build WinHome.sln`
+- **Test**: `dotnet test WinHome.sln`
+- **Linux/macOS**: See the [Cross-Platform Development Guide](./docs/cross-platform-dev.md) for details on using our mock-based testing suite.
+
+## 📜 Code Style & Standards
+
+### Formatting
+We use standard .NET coding conventions. Before submitting, please run:
+```bash
+dotnet format WinHome.sln
 ```
+Our CI/CD pipeline will verify that the code is formatted correctly.
 
-### Get the code
+### Commit Messages
+We follow a structured format for commit messages: `<Type>: <Brief description>`
+- `Fix`: Bug fixes.
+- `Feat`: New features.
+- `Docs`: Documentation changes.
+- `Chore`: Maintenance, CI, or dependency updates.
+- `Test`: Adding or improving tests.
 
-```sh
-git clone https://github.com/your-username/WinHome.git
-cd WinHome
-```
+Example: `Feat: Add support for transparency effects in SystemSettings`
 
-### Build the project
+## 🧪 Test Expectations
+- **No Regressions**: Existing tests must pass.
+- **New Features**: Every new feature or bug fix must include corresponding unit tests in the `tests/WinHome.Tests/` directory.
+- **Mocks**: When working on Windows-specific services, use the `Moq` framework to ensure tests remain runnable on Linux/macOS.
 
-To build the project, run the following command from the root of the repository:
+## 📝 Pull Request Guidelines
+- **Template**: Fill out the PR template completely.
+- **Issue Link**: Always link the PR to the relevant GitHub issue (e.g., `Closes #38`).
+- **Single Focus**: Keep PRs focused on a single change. Large, multi-purpose PRs will be asked to be split.
 
-```sh
-dotnet build WinHome.sln
-```
+## ⏱️ Review Timeline
+We value your time!
+- **Initial Triage**: Issues and PRs are usually triaged within **24 hours**.
+- **Full Review**: Expect a detailed code review within **48-72 hours**.
+- If you don't hear from us after 3 days, feel free to @mention a maintainer in the comments.
 
-### Run the tests
-
-To run the tests, run the following command from the root of the repository:
-
-```sh
-dotnet test WinHome.sln
-```
-
-## 🐧 Linux & 🍎 macOS Development
-
-You can develop and run unit tests for WinHome on Linux and macOS using the .NET 10 SDK. Since the engine is Windows-specific, we use mocks to ensure high test coverage on non-Windows platforms.
-
-For a detailed guide on how to contribute from a non-Windows machine, see the **[Cross-Platform Development Guide](./docs/cross-platform-dev.md)**.
-
-### Make your changes
-
-Now, go make your changes!
-
-### Commit your changes
-
-Make sure your commit messages are in the proper format.
-
-```sh
-git commit -m "Fix: Brief description of the change"
-```
-
-### Push your changes
-
-```sh
-git push origin 38-add-awesome-new-feature
-```
-
-### Create a pull request
-
-Go to the GitHub repository and create a pull request.
-
-## A note on pull requests
-
-- Fill the pull request template out completely.
-- A link to the GitHub issue in the pull request is required.
-- Make sure your code is formatted correctly.
-- Make sure your code is tested.
+## 💬 Contact
+For quick questions or community support, please use our **[GitHub Discussions](https://github.com/DotDev262/WinHome/discussions)**.
 
 Thank you for your contribution!
