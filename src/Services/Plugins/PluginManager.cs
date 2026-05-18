@@ -13,16 +13,19 @@ namespace WinHome.Services.Plugins
         private readonly BunBootstrapper _bunBootstrapper;
         private readonly ILogger _logger;
         private readonly string _pluginsDir;
+        private readonly IRuntimeResolver? _runtimeResolver;
 
         public PluginManager(
             UvBootstrapper uvBootstrapper,
             BunBootstrapper bunBootstrapper,
             ILogger logger,
-            string? pluginsDirectory = null)
+            string? pluginsDirectory = null,
+            IRuntimeResolver? runtimeResolver = null)
         {
             _uvBootstrapper = uvBootstrapper;
             _bunBootstrapper = bunBootstrapper;
             _logger = logger;
+            _runtimeResolver = runtimeResolver;
 
             _pluginsDir = pluginsDirectory ?? Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
@@ -84,6 +87,30 @@ namespace WinHome.Services.Plugins
                         _logger.LogInfo($"[Plugin] {plugin.Name} requires 'bun'. Installing...");
                         await Task.Run(() => _bunBootstrapper.Install(false));
                     }
+                    break;
+
+                case "powershell":
+                    string resolvedMessage = "Assuming system powershell is available.";
+                    if (_runtimeResolver != null)
+                    {
+                        try
+                        {
+                            var pwshResolved = _runtimeResolver.Resolve("pwsh");
+                            if (pwshResolved != "pwsh" && File.Exists(pwshResolved))
+                            {
+                                resolvedMessage = "Using pwsh (Core).";
+                            }
+                            else
+                            {
+                                resolvedMessage = "Falling back to Windows PowerShell.";
+                            }
+                        }
+                        catch
+                        {
+                            resolvedMessage = "Falling back to Windows PowerShell.";
+                        }
+                    }
+                    _logger.LogInfo($"[Plugin] {plugin.Name} requires 'powershell'. {resolvedMessage}");
                     break;
             }
         }
