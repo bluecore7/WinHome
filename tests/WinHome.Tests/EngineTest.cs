@@ -410,7 +410,14 @@ namespace WinHome.Tests
       var engine = CreateEngine(mockLogger);
 
       // Act
-      await engine.RunAsync(config, false);
+      try
+      {
+        await engine.RunAsync(config, false);
+      }
+      catch (Exception)
+      {
+        // Expected — engine re-throws when continueOnError is false
+      }
 
       // Assert
       _mockStateService.Verify(s => s.MarkAsApplied("reg:HKCU\\Software\\WinHome|FailedSetting"), Times.Never);
